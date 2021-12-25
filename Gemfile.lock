@@ -279,6 +279,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages (~> 219)
   jekyll-feed (~> 0.12)
+  jekyll-sitemap
   minima (~> 2.5)
   stringex
   thor
