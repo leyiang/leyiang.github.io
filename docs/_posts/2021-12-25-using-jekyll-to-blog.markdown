@@ -28,6 +28,66 @@ tags:
 
 综上所诉，选择 Github Pages + Jekyll。
 
-# 0x02 可做的优化 (TODO)
-+ 使用国内CDN提高 Github Pages 的速度
-+ 自动 build + Commit + Push，让写作流程更顺畅
+# 0x02 优化写作流程 
+Jekyll 新建每一篇 Post 都需要自己创建文件并且按`年-月-日-文章url.md`的格式去命名，每个文件中还会有一些固定的字段，类似 title、tags。每次创建文章都需要手动复制粘贴。
+除此之外，Jekyll 对于图片也没有特别好的管理，所有图片都放一个文件夹？或是创建文章的时候同时创建一个对应文章的图片文件夹？在插入图片的时候把文件相对路径写上？
+    
+一番搜索后找到两位前辈的方案：[INCLUDING AND MANAGING IMAGES IN JEKYLL](https://eduardoboucas.com/blog/2014/12/07/including-and-managing-images-in-jekyll.html) 和 [CREATE JEKYLL POSTS FROM THE COMMAND LINE](https://gist.github.com/ichadhr/0b4e35174c7e90c0b31b)
+
+优化后即可通过 `thor jekyll:new 文章名称` 命令创建 Post 文件及图片文件夹。
+{% raw %}
+如需要插入图片使用 `{% include image name="img.png" caption="Image Caption" %}`
+{% endraw %}
+
+修改过的 jekyll.thor
+```ruby
+require "stringex"
+class Jekyll < Thor
+  desc "new", "create a new post"
+  method_option :editor, :default => "subl"
+  def new(*title)
+    title = title.join(" ")
+    date = Time.now.strftime('%Y-%m-%d')
+    filename = "_posts/#{date}-#{title.to_url}.markdown"
+    foldername = "assets/posts/#{date}-#{title.to_url}"
+
+    if File.exist?(filename)
+      abort("#{filename} already exists!")
+    end
+
+    puts "Creating new post: #{filename}"
+    open(filename, 'w') do |post|
+      post.puts "---"
+      post.puts "layout: post"
+      post.puts "uri: #{date}-#{title.to_url}"
+      post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+      post.puts "tags:"
+      post.puts " -"
+      post.puts "---"
+    end
+
+    puts "Creating new folder: #{foldername}"
+    Dir.mkdir(foldername)
+  end
+end
+```
+
+`_includes\image` (无后缀名)
+
+{% raw %}
+```html
+{% capture imagePath %}{{ page.uri }}/{{ include.name }}{% endcapture %}
+{% if include.caption %}
+<figure>
+    <img src="/assets/posts/{{ imagePath }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+    <figcaption>{{ include.caption }}</figcaption>
+</figure>
+{% else %}
+<img src="/assets/posts/{{ imagePath }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+{% endif %}
+```
+{% endraw %}
+
+这里有个坑，img 和 figure 前不能有tab，否则会被 markdown 解析成 code 标签
+# 0x03 使用国内CDN提高 Github Pages 的速度
+（TODO）
