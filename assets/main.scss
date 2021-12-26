@@ -20,3 +20,19 @@ pre, code {
   background-color: #f3f6fa;
 }
 /** Code Block Background Color **/
+
+
+/** Figure Style **/
+figure {
+  margin: 4rem 0;
+}
+
+figure>img {
+  margin: 0 auto;
+}
+
+figcaption {
+  color: #717171;
+  text-align: center;
+}
+/** Figure Style **/
