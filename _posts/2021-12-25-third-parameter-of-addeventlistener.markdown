@@ -11,7 +11,7 @@ tags:
 # 0x00 前因
 我需要完成一个效果：鼠标在进入某个 元素 时可以改变颜色、改变大小，显示文字，如下图所示
 
-{% include image name="effect-showing.gif" %}
+{% include image name="effect-showing.gif" caption="效果展示" %}
 
 我的想法是小球由 DIV 构成，实时跟随鼠标，进入其它元素的效果由 html 定义。
 
@@ -73,7 +73,7 @@ this.container.addEventListener("mouseout", event => {
 
 ```
 
-{% include image name="mouseout-bug.gif" %}
+{% include image name="mouseout-bug.gif" caption="问题展示" %}
 
 简单的元素没有问题，但HTML只要稍微有一点嵌套，效果就会出问题。这是因为 mouseenter, mouseout 是通过焦点来判定的。
 
