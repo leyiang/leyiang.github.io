@@ -4,14 +4,16 @@
 @import "minima";
 
 
-/** Change Line Height **/
+/**
+Default Line Height
+ */
 body {
   line-height: 1.8;
 }
-/** Change Line Height **/
 
-
-/** Code Block Background Color **/
+/**
+Code Block
+ */
 .highlighter-rouge .highlight {
   background-color: #f3f6fa;
 }
@@ -19,10 +21,17 @@ body {
 pre, code {
   background-color: #f3f6fa;
 }
-/** Code Block Background Color **/
 
+/**
+Remove Top Border From Header
+ */
+.site-header {
+  border-top: none;
+}
 
-/** Figure Style **/
+/**
+Figure Default Style
+ */
 figure {
   margin: 4rem 0;
 }
@@ -35,4 +44,12 @@ figcaption {
   color: #717171;
   text-align: center;
 }
-/** Figure Style **/
+
+/**
+Adding Margin Top For Headers
+ */
+.post-content {
+  h1, h2 {
+    margin-top: 2em;
+  }
+}
