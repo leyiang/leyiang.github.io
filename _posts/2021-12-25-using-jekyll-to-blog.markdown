@@ -103,3 +103,8 @@ end
 这里有个坑，img 和 figure 前不能有tab，否则会被 markdown 解析成 code 标签
 # 0x03 使用国内CDN提高 Github Pages 的速度
 （TODO）
+
+# 0xFF 更多阅读
++ [Creating a GitHub Pages site with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll)
++ [Including and managing images in jekyll](https://eduardoboucas.com/blog/2014/12/07/including-and-managing-images-in-jekyll.html)
++ [Create jekyll posts from the command line](https://gist.github.com/ichadhr/0b4e35174c7e90c0b31b)
