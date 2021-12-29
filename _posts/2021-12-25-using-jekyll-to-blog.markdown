@@ -43,15 +43,12 @@ tags:
 # 0x02 优化写作流程 
 Jekyll 新建每一篇 Post 都需要自己创建文件并且按`年-月-日-文章url.md`的格式去命名，每个文件中还会有一些固定的字段，类似 title、tags。每次创建文章都需要手动复制粘贴。
 除此之外，Jekyll 对于图片也没有特别好的管理，所有图片都放一个文件夹？或是创建文章的时候同时创建一个对应文章的图片文件夹？在插入图片的时候把文件相对路径写上？
-    
-一番搜索后找到两位前辈的方案：[INCLUDING AND MANAGING IMAGES IN JEKYLL](https://eduardoboucas.com/blog/2014/12/07/including-and-managing-images-in-jekyll.html) 和 [CREATE JEKYLL POSTS FROM THE COMMAND LINE](https://gist.github.com/ichadhr/0b4e35174c7e90c0b31b)
 
-优化后即可通过 `thor jekyll:new 文章名称` 命令创建 Post 文件及图片文件夹。
 {% raw %}
-如需要插入图片使用 `{% include image name="img.png" caption="Image Caption" %}`
+一番搜索后找到两位前辈的方案，优化后即可通过 `thor jekyll:new 文章名称` 命令创建 Post 文件及图片文件夹。 如需要插入图片使用 `{% include image name="img.png" caption="Image Caption" %}`
 {% endraw %}
 
-修改过的 jekyll.thor
+jekyll.thor
 ```ruby
 require "stringex"
 class Jekyll < Thor
