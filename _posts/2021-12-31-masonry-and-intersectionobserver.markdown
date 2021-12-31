@@ -41,7 +41,7 @@ tags:
 /**
  * If there's still blank area in first page
  */
-if( entries[0].isIntersecting && false ) {
+if( entries[0].isIntersecting ) {
 
     /**
      * Un-observe scroll-notify element
