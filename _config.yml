@@ -40,7 +40,7 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - jekyll.thor
+   - jekyll.thor
    - .sass-cache/
    - .jekyll-cache/
    - gemfiles/
