@@ -98,6 +98,13 @@ end
 {% endraw %}
 
 这里有个坑，img 和 figure 前不能有tab，否则会被 markdown 解析成 code 标签
+
+注：不要忘了把 jekyll.thor 在编译中给忽略掉
+```
+exclude:
+  - jekyll.thor
+```
+
 # 0x03 使用国内CDN提高 Github Pages 的速度
 （TODO）
 
