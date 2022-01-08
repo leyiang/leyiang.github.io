@@ -2,7 +2,7 @@
 
     <div class="wrapper"
          {%- if site.doodle %}
-            style="background: url('assets/doodle/{{ site.year }}/{{ site.doodle }}.png')"
+            style="background: url('/assets/doodle/{{ site.year }}/{{ site.doodle }}.png')"
          {%- endif %}
     >
         {%- assign default_paths = site.pages | map: "path" -%}
