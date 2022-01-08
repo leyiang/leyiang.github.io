@@ -11,11 +11,13 @@
             <div class="footer-col footer-col-1">
                 <ul class="contact-list">
                     {%- if site.github_username %}
-                    <li><a href="https://github.com/{{ site.github_username }}">
-                        <svg class="svg-icon">
-                            <use xlink:href="/assets/minima-social-icons.svg#github"></use>
-                        </svg>
-                        <span class="username">{{ site.github_username }}</span></a>
+                    <li>
+                        <a href="https://github.com/{{ site.github_username }}" style="display: flex; align-items: center">
+                            <svg class="svg-icon">
+                                <use xlink:href="/assets/minima-social-icons.svg#github"></use>
+                            </svg>
+                            <span class="username">{{ site.github_username }}</span>
+                        </a>
                     </li>
                     {%- endif %}
 
