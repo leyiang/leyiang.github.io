@@ -28,6 +28,8 @@ github_username:  leyiang
 
 year: 2022
 doodle: spring-doodle
+doodle_link: "https://en.wikipedia.org/wiki/Chinese_New_Year"
+doodle_title: "中国壬寅年新年快乐！"
 
 # Build settings
 theme: minima

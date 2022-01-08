@@ -53,3 +53,17 @@ Adding Margin Top For Headers
     margin-top: 2em;
   }
 }
+
+.site-header {
+  min-height: 54px;
+}
+
+.doodle-link {
+  float: right;
+  display: block;
+  max-width: 630px;
+  height: 54px;
+  width: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

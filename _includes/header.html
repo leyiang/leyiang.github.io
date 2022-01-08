@@ -1,12 +1,24 @@
 <header class="site-header">
 
-    <div class="wrapper"
-         {%- if site.doodle %}
-            style="background: url('/assets/doodle/{{ site.year }}/{{ site.doodle }}.png')"
-         {%- endif %}
-    >
+    <div class="wrapper">
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
         <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+        <a class="doodle-link" rel="contents"
+           {%- if site.doodle_link %}
+           href="{{ site.doodle_link }}"
+           target="_blank"
+           referrerpolicy="no-referrer"
+           {%- endif %}
+
+           {%- if site.doodle_title %}
+           title="{{ site.doodle_title }}"
+           {%- endif %}
+
+           {%- if site.doodle %}
+           style="background-image: url('/assets/doodle/{{ site.year }}/{{ site.doodle }}.png')"
+           {%- endif %}
+        ></a>
     </div>
 </header>
