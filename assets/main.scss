@@ -58,8 +58,19 @@ Adding Margin Top For Headers
   min-height: 54px;
 }
 
+.site-header .wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.site-header .site-title {
+  float: unset;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
 .doodle-link {
-  float: right;
   display: block;
   max-width: 630px;
   height: 54px;
