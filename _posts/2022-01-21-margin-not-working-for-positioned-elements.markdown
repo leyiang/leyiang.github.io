@@ -34,7 +34,7 @@ tags:
 
 经过一番测试，发现在`bottom`设置过的情况下，`margin-top`不起作用。`left`设置过的情况下，`margin-right`不起作用。`top`和`right`也一样。
 
-在网上冲浪时没有找到相关信息，等C++补好了去Chromium中找答案。
+设置`margin-top: 12px` 不起作用，最后只能换成 `margin-bottom: -12px`。在网上冲浪时没有找到相关解释，等C++补好了去Chromium中找答案。
 
 # 0xFF 更多阅读
 + [xy-tips](https://xy-ui.codelabo.cn/docs/#/xy-tips)
