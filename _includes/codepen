@@ -1,4 +1,4 @@
-<div style="margin-bottom: 1rem;">
+<div class="codepen-container">
 <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="{{ include.id }}" data-user="leyiang" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/leyiang/pen/{{ include.id }}">
   Untitled</a> by Le Yi Ang (<a href="https://codepen.io/leyiang">@leyiang</a>)
