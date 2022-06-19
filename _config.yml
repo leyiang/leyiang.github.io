@@ -31,6 +31,9 @@ doodle: spring-doodle
 doodle_link: "https://en.wikipedia.org/wiki/Chinese_New_Year"
 doodle_title: "中国壬寅年新年快乐！"
 
+# Enable Future Post (Server and client date inconsistent): 
+future: true
+
 # Build settings
 theme: minima
 plugins:
