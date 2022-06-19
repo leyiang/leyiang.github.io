@@ -32,7 +32,7 @@ We can simply loop through every element, and check if it is a peak element.
 ```javascript
 const arr = [1, 2, 3, 4, 5, 6];
 ```
-In this case, we will have ![theta of n](http://mathurl.com/render.cgi?\theta%28n%29) as time complexity
+In this case, we will have {% include image name="theta_n.png" %} as time complexity
 
 ### Divide and Conquer
 0. if arr has a length of 1, arr[0] is a peak, and we are down.
@@ -43,8 +43,7 @@ In this case, we will have ![theta of n](http://mathurl.com/render.cgi?\theta%28
 
 
 #### Time complexity
-
-![theta of n](http://mathurl.com/render.cgi?T%28n%29%20%3D%20T%28n/2%29%20+%20%5Ctheta%281%29%20%5C%5C%0AT%28n/2%29%20%3D%20T%28n/4%29%20+%20%5Ctheta%281%29%20%5C%5C%0AT%281%29%20%3D%20%5Ctheta%281%29%20%5C%5C%0A2%5Em%20%3D%20n%2C%20%5Clog_2%20n%20%3D%20m%20%5C%5C%0AT%28n%29%20%3D%20%5Ctheta%28%5Clog_2%20n%29%0A%5Cnocache)
+{% include image name="1d_complexity.png" caption="1D Time Complexity" %}
 
 ## Find a peak in 2D array
 ### Divide and Conquer
@@ -55,7 +54,7 @@ In this case, we will have ![theta of n](http://mathurl.com/render.cgi?\theta%28
 4. else (m/2, i) is a 2D peak, and we are down.
 
 #### Time Complexity
-![complexity](http://mathurl.com/render.cgi?T%28n%2C%20m%29%20%3D%20T%28n%2C%20m/2%29%20+%20%5Ctheta%28n%29%20+%20C%20%5C%5C%0AT%28n%2C%20m/2%29%20%3D%20T%28n%2C%20m/4%29%20+%20%5Ctheta%28n%29%20+%20C%20%5C%5C%0AT%28n%2C%201%29%20%3D%20%5Ctheta%28n%29%20%5C%5C%0AT%28n%2C%20m%29%20%3D%20%5Ctheta%28n%5Clog_2%20m%29%5Cnocache)
+{% include image name="2d_complexity.png" caption="2D Time Complexity" %}
 
 ## Peak Finding on Leetcode
 
