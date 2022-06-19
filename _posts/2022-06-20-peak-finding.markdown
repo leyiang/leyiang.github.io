@@ -4,7 +4,6 @@ uri: 2022-06-20-peak-finding
 title: "Peak Finding"
 tags:
  - Algorithm
- - Peak Finding
 ---
 
 ## Definition
