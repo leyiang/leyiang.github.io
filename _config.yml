@@ -27,9 +27,9 @@ url: "https://moop.top" # the base hostname & protocol for your site, e.g. http:
 github_username:  leyiang
 
 year: 2022
-doodle: spring-doodle
-doodle_link: "https://en.wikipedia.org/wiki/Chinese_New_Year"
-doodle_title: "中国壬寅年新年快乐！"
+doodle: summer-doodle.jpg
+#doodle_link: "https://en.wikipedia.org/wiki/Chinese_New_Year"
+doodle_title: "夏至己至"
 
 # Enable Future Post (Server and client date inconsistent): 
 future: true
