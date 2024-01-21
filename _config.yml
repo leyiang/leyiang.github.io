@@ -26,10 +26,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://moop.top" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  leyiang
 
-year: 2022
-doodle: summer-doodle.jpg
-#doodle_link: "https://en.wikipedia.org/wiki/Chinese_New_Year"
-doodle_title: "夏至己至"
+year: 2024
+doodle: spring-doodle.png
+doodle_link: "https://en.wikipedia.org/wiki/Chinese_New_Year"
+doodle_title: "又是一年迎春时"
 
 # Enable Future Post (Server and client date inconsistent): 
 future: true
