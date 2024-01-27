@@ -1,0 +1,166 @@
+{{ $font := resources.Get "fonts/ArtFont.ttf" }}
+{{ $yearImage := resources.Get "images/2024.png" }}
+
+
+<style>
+    .doodle {
+        height: 240px;
+        background: #FF7955;
+        margin-bottom: 4rem;
+        border-radius: 8px;
+
+        position: relative;
+    }
+
+    .dragon-img {
+        height: 280px;
+        width: auto;
+        position: absolute;
+        left: -20px;
+        top: -20px;
+        user-select: none;
+    }
+
+
+    @font-face {
+        font-family: "ArtFont";
+        src: url({{ $font.RelPermalink }});
+    }
+
+    .main-area {
+        /* background-image: url({{ $yearImage.RelPermalink }}); */
+    }
+
+    .doodle {
+        display: flex;
+        padding-left: 190px;
+        gap: 1rem;
+    }
+
+    .main-area {
+        position: relative;
+        width: 400px;
+    }
+
+    .main-area-inner {
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        border-radius: 8px;
+        top: 15px;
+        /* left: 200px; */
+        background-color: #fff;
+        background-size: contain;
+        background-position: 10px center;
+        background-repeat: no-repeat;
+        box-shadow: #B42D2D 14px 13px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        flex-direction: column;
+    }
+
+    .main-area h2 {
+        color: #d2412c;
+        font-size: 80px;
+        font-family: ArtFont;
+    }
+
+    .main-area span {
+        font-size: 24px;
+        font-family: KaiFont;
+    }
+
+    .btn-wrap {
+        flex: 1;
+        padding: 1rem;
+        display: flex;
+    }
+
+    .doodle button {
+        flex: 1;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        /* margin-right: 1rem; */ 
+        box-shadow: #B42D2D 0rem 12px;
+        outline: none;
+
+        background: #ffed00;
+        cursor: pointer;
+        border: none;
+        font-size: 2rem;
+        font-weight: 700;
+        transition: transform .3s, box-shadow .3s;
+    }
+
+    .doodle button:active {
+        box-shadow: #B42D2D 0rem 0px;
+        transform: translateY(12px);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+<div class="doodle">
+
+    {{ $dragonImage := resources.Get "images/dragon_boy.png" }}
+    <img src="{{ $dragonImage.RelPermalink }}" class="dragon-img" alt="dragon and boy in new year style" />
+
+    <div class="main-area">
+        <div class="main-area-inner">
+            <h2>甲辰龙年</h2>
+            <span class="day-countdown"></span>
+        </div>
+    </div>
+
+    <div class="btn-wrap">
+        <button class="happy-btn">
+            兴奋
+        </button>
+    </div>
+</div>
+
+<script>
+const jsConfetti = new JSConfetti()
+const dayCountdown = document.querySelector(".day-countdown");
+
+function getDayCountdown() {
+    const today = new Date();
+    const newYear = new Date("2024-02-10");
+
+    if( today > newYear ) {
+        return "已经到了！";
+    }
+
+    const oneDay = 24 * 60 * 60 * 1000;
+    const days = Math.round((newYear - today) / oneDay);
+    let output = "";
+    
+    const list = ["一", "二", "三","四", "五", "六", "七", "八", "九"];
+
+    if( days >= 10 ) output += "十";
+    if( days !== 10 ) {
+        output += list[ days % 10 - 1];
+    }
+
+    return `还有${ output }天`;
+}
+
+dayCountdown.textContent = getDayCountdown();
+
+const happyBTN = document.querySelector(".happy-btn"); 
+const wordList = ["开心", "激动", "快乐", "欢欣", "高兴", "欣喜","雀跃", "狂喜", "兴高采烈", "欢呼", "兴奋"];
+let count = -1;
+
+happyBTN.addEventListener("click", e => {
+    count += 1;
+    happyBTN.textContent = wordList[ count % wordList.length ];
+
+    jsConfetti.addConfetti({
+        emojis: ['🧨', '🧧', '💰', '🎉', '🇨🇳', '🍻', '🎆', '🐉'],
+        confettiNumber: 10
+    })
+});
+</script>

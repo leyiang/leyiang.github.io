@@ -3,6 +3,8 @@
 
     <main class="content-area">
 
+        {{ partial "2024-spring/doodle.html" }}
+
         {{ range  ( where .Site.RegularPages "Type" "posts" ) }}
             <article class="article-item">
                 <h2 class="article-title">
