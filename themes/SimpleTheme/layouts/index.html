@@ -1,0 +1,22 @@
+{{ define "main" }}  
+{{ .Content }}  
+
+    <main class="content-area">
+
+        {{ range  ( where .Site.RegularPages "Type" "posts" ) }}
+            <article class="article-item">
+                <h2 class="article-title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+
+                {{ $summary := .Summary | safeHTML | truncate 100 }}
+                {{ $summary := replace $summary "$$" "" }}
+                <p class="article-desc">{{ $summary }}</p>
+
+                <time class="second-text article-info">{{ .PublishDate.Format "January 2, 2006" }}</time>
+            </article>
+        {{ end }}
+
+    </div>
+
+{{ end }}  

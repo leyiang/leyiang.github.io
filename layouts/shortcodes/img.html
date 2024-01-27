@@ -1,0 +1,12 @@
+
+{{ if .Get "caption" }}
+<figure>
+    <div class="img-wrap">
+        <img src="images/{{ .Get "src" }}" alt="{{ .Get `caption`}}" />
+    </div>
+
+    <figcaption>{{ .Get "caption" }}</figcaption>
+</figure>
+{{ else }}
+<img src="{{ .Get "src" }}" alt="">
+{{ end }}

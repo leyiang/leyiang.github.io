@@ -1,0 +1,11 @@
+baseURL = 'https://moop.top/'
+languageCode = 'en-us'
+title = '淇澳斋'
+
+theme = 'SimpleTheme'
+markup.highlight.noClasses = false
+
+[params]
+  github="leyiang" 
+  email="yiangforwork#gmail.com" 
+  tagline="昭昭使昭昭" 

@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<section class="content-area">
+    <article class="single-page-article">
+        <h2 class="article-title">{{ .Title }}</h2>
+
+        <div class="meta-info second-text">
+            <time>{{ .PublishDate.Format "January 2, 2006" }}</time>
+            <span class="reading-time">
+                {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }} read
+            </span>
+        </div>
+
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+
+    </article>
+</section>
+{{ end }}
