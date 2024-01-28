@@ -1,0 +1,38 @@
+<span class="cn-date second-text">癸卯年 腊月1八</span>
+
+<script>
+const dateDOM = document.querySelector(".cn-date");
+
+// 天干
+const HeavenlyStems = "甲乙丙丁戊己庚辛壬癸";
+
+// 地支
+const EarthlyBranchs = "子丑寅卯辰巳午未申酉戌亥";
+
+function getTodayString() {
+    const date = new Date();
+    return date.toISOString().slice(0, 10);
+}
+
+const token = "CI8zf8YeWAR10Cs1";
+const endpoint = "https://v2.alapi.cn/api/lunar?token=" + token;
+const todayString = getTodayString();
+
+function setDateStringByInfo( info ) {
+    const dateString = info.ganzhi_year + "年 " + info.lunar_month_chinese + info.lunar_day_chinese;
+    dateDOM.textContent = dateString;
+}
+
+if( localStorage.getItem(todayString) ) {
+    const dateInfo = JSON.parse( localStorage.getItem( todayString ) );
+    setDateStringByInfo( dateInfo );
+
+} else {
+    fetch( endpoint )
+        .then(r => r.json())
+        .then( r => {
+            localStorage.setItem( todayString, JSON.stringify(r.data));
+            setDateStringByInfo( r.data );
+        });
+}
+</script>

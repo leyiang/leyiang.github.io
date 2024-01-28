@@ -3,6 +3,7 @@
         <h1 class="site-title">
             <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
         </h1>
-        <span class="cn-date second-text">癸卯年 腊月十八</span>
+
+        {{ partial "calendar.html" }}
     </div>
 </header>
