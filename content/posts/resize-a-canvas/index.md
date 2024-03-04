@@ -61,7 +61,7 @@ canvas.width = 200
 重新设置width或height会清除一切state, transform, lineWidth, strokeStyle 等等
 如果在特殊情况下需要重置的话，可以使用这个方法。
 
-正常来说清画布还是用：
+正常来说清Canvas画布还是用：
 ```js
 // Store the current transformation matrix
 context.save();
