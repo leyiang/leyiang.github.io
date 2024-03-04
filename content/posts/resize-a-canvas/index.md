@@ -57,4 +57,19 @@ canvas.width = 200
 
 所以，设置width或height会把canvas设置回最初的状态。
 
-那，这个特性有什么用吗？目前还没发现。
+<del>那，这个特性有什么用吗？目前还没发现。</del>
+重新设置width或height会清除一切state, transform, lineWidth, strokeStyle 等等
+如果在特殊情况下需要重置的话，可以使用这个方法。
+
+正常来说清画布还是用：
+```js
+// Store the current transformation matrix
+context.save();
+
+// Use the identity matrix while clearing the canvas
+context.setTransform(1, 0, 0, 1, 0, 0);
+context.clearRect(0, 0, canvas.width, canvas.height);
+
+// Restore the transform
+context.restore();
+```
